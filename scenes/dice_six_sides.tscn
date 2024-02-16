@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg1f2cmhlvepe"]
+
+[ext_resource type="Script" path="res://scripts/dice.gd" id="1_q0btg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7eunq"]
+friction = 0.75
+bounce = 0.35
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wmmc4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xdufc"]
+
+[node name="DiceSixSides" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_7eunq")
+script = ExtResource("1_q0btg")
+xAxisRange = Vector2(-5, 5)
+yAxisRange = Vector2(-5, 5)
+zAxisRange = Vector2(-5, 20)
+diceThrowDirectionImpulseRange = Vector2(-30, 30)
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_wmmc4")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_xdufc")
+skeleton = NodePath("")

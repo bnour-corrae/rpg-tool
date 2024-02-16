@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0p1kdxsdsrk5"]
+
+[ext_resource type="PackedScene" uid="uid://dlmajphkrp5en" path="res://scenes/dice_table.tscn" id="1_yumpk"]
+[ext_resource type="PackedScene" uid="uid://cg1f2cmhlvepe" path="res://scenes/dice_six_sides.tscn" id="2_vvlmw"]
+[ext_resource type="Environment" uid="uid://rqdlto46tjbq" path="res://resources/environments/default_environment.tres" id="3_ksi4t"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7ff3l"]
+
+[node name="World" type="Node3D"]
+
+[node name="DiceTable" parent="." instance=ExtResource("1_yumpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0136461, 0, -0.0118208)
+
+[node name="DiceSixSides" parent="." instance=ExtResource("2_vvlmw")]
+transform = Transform3D(1, 0, 0, 0, 0.887067, -0.46164, 0, 0.46164, 0.887067, 0.00949335, 1.82223, -2.76092)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 5.825, 0)
+current = true
+fov = 90.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.641128, 0.767434, 0, -0.767434, 0.641128, 0, 0, 0)
+light_energy = 2.939
+light_indirect_energy = 1.06
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_ksi4t")
+camera_attributes = SubResource("CameraAttributesPractical_7ff3l")
