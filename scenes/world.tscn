@@ -9,13 +9,15 @@
 [node name="World" type="Node3D"]
 
 [node name="DiceTable" parent="." instance=ExtResource("1_yumpk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0136461, 0, -0.0118208)
+transform = Transform3D(2.5, 0, 0, 0, 4.26, 0, 0, 0, 3.38, 0, 0, 0)
 
 [node name="DiceSixSides" parent="." instance=ExtResource("2_vvlmw")]
-transform = Transform3D(1, 0, 0, 0, 0.887067, -0.46164, 0, 0.46164, 0.887067, 0.00949335, 1.82223, -2.76092)
+transform = Transform3D(1, 0, 0, 0, 0.887067, -0.46164, 0, 0.46164, 0.887067, 0.489233, 9.6816, -9.95403)
+mass = 44.06
+gravity_scale = 3.995
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 5.825, 0)
+transform = Transform3D(-1, -8.74228e-08, -7.87981e-15, -7.6755e-08, 0.877975, 0.478707, -4.18499e-08, 0.478707, -0.877975, 0, 13.5617, -27.0583)
 current = true
 fov = 90.0
 

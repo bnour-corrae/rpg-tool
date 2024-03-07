@@ -1,47 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlmajphkrp5en"]
+[gd_scene load_steps=5 format=3 uid="uid://dlmajphkrp5en"]
 
-[ext_resource type="Material" uid="uid://ccdorpg8n4xlj" path="res://resources/materials/testing_orange.tres" id="1_ug68y"]
+[ext_resource type="Script" path="res://scenes/StaticBody.gd" id="1_ja2ib"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v3qjy"]
-size = Vector3(1, 4, 9)
+size = Vector3(1, 4, 19)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_idncj"]
-size = Vector3(9, 1, 9)
+size = Vector3(19.748, 1, 20.3086)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5n1ym"]
 
 [node name="DiceTable" type="Node3D"]
 
 [node name="StaticBody" type="StaticBody3D" parent="."]
+script = ExtResource("1_ja2ib")
 
 [node name="EastWall" type="CollisionShape3D" parent="StaticBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.5, 0)
 shape = SubResource("BoxShape3D_v3qjy")
 
 [node name="SouthWall" type="CollisionShape3D" parent="StaticBody"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.5, -5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.5, -10)
 shape = SubResource("BoxShape3D_v3qjy")
 
 [node name="WestWall" type="CollisionShape3D" parent="StaticBody"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5, 1.5, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10, 1.5, 0)
 shape = SubResource("BoxShape3D_v3qjy")
 
 [node name="NorthWall" type="CollisionShape3D" parent="StaticBody"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 1.5, 5)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 1.5, 10)
 shape = SubResource("BoxShape3D_v3qjy")
-
-[node name="Ceiling" type="CollisionShape3D" parent="StaticBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00042367, 4.02221, 0.041358)
-shape = SubResource("BoxShape3D_idncj")
 
 [node name="Floor" type="CollisionShape3D" parent="StaticBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00042367, -0.475287, 0.041358)
 shape = SubResource("BoxShape3D_idncj")
 
-[node name="DiceTableBase" type="CSGBox3D" parent="."]
-size = Vector3(10, 1, 10)
-material = ExtResource("1_ug68y")
-
-[node name="DiceTableNegative" type="CSGBox3D" parent="DiceTableBase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-operation = 2
-size = Vector3(9, 1, 9)
-material = ExtResource("1_ug68y")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_5n1ym")
