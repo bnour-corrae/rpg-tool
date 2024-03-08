@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/StaticBody.gd" id="1_ja2ib"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v3qjy"]
-size = Vector3(1, 4, 19)
+size = Vector3(1, 33.667, 19)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_idncj"]
 size = Vector3(19.748, 1, 20.3086)

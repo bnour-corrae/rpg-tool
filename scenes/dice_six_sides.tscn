@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cg1f2cmhlvepe"]
 
 [ext_resource type="Script" path="res://scripts/dice.gd" id="1_q0btg"]
-[ext_resource type="Texture2D" uid="uid://swahcgt3qt2v" path="res://resources/textures/dice_red_color.png" id="2_2tqhi"]
+[ext_resource type="Texture2D" uid="uid://bx0pwyoacq10n" path="res://resources/textures/dice_red_color.png" id="2_2tqhi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7eunq"]
 friction = 0.75
@@ -30,8 +30,6 @@ size = Vector3(2.44247, 2.43285, 2.43298)
 [node name="DiceSixSides" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_7eunq")
 script = ExtResource("1_q0btg")
-xAxisRange = Vector2(-5, 5)
-yAxisRange = Vector2(-5, 5)
 zAxisRange = Vector2(-5, 20)
 diceThrowDirectionImpulseRange = Vector2(-30, 30)
 
